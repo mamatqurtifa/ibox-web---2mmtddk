@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>iBox Indonesia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+    *{
+      padding: 0;
+      margin: 0;
+      text-decoration: none;
+      list-style: none;
+      box-sizing: border-box;
+    }
+    body{
+      font-family: montserrat;
+    }
+    nav{
+      background: black;
+      height: 80px;
+      width: 100%;
+    }
+    .logo{
+      height: 80px;
+      padding: 0 100px;
+    }
+    nav ul{
+      float: right;
+      margin-right: 20px;
+    }
+    nav ul li{
+      display: inline-block;
+      line-height: 80px;
+      margin: 0 5px;
+    }
+    nav ul li a{
+      color: white;
+      font-size: 17px;
+      padding: 7px 13px;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+    .checkbtn{
+      font-size: 30px;
+      color: white;
+      float: right;
+      line-height: 80px;
+      margin-right: 40px;
+      cursor: pointer;
+      display: none;
+    }
+    #check{
+      display: none;
+    }
+    @media (min-width: 953px){
+      .service {
+        grid-template-columns: repeat(4, 1fr);
+        margin: 50px;
+      }
+      .theproduct {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .p-card {
+        width: 100%;
+      }
+      .cr {
+        text-align: center;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        padding: 20px 10px;
+        font-size: 0.9em;
+      }
+    }
+    @media (max-width: 952px){
+      .logo{
+        padding-left: 30px;
+      }
+      nav ul li a{
+        font-size: 16px;
+      }
+    }
+    @media (max-width: 858px){
+      .checkbtn{
+        display: block;
+      }
+      ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: black;
+        border: 5px solid #171717;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+      }
+      nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+      }
+      nav ul li a{
+        font-size: 20px;
+      }
+      a:hover{
+        background: none;
+        color: #0082e6;
+      }
+      #check:checked ~ ul{
+        left: 0;
+      }
+      #home {
+        padding: 100px 0;
+      }
+      .service {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 30px;
+      }
+      .theproduct {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      .p-card {
+        width: 100%;
+      }
+    }
+    .container {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+    }
+    #home {
+      margin: 0 auto;
+      text-align: center;
+      padding: 50px;
+      background-color: black;
+      color: white;
+      width: 100vw;
+    }
+    
+    #home img {
+      width: 91%;
+    }
+
+    #home h1 {
+      font-size: 2.5em;
+    }
+
+    #home p, #about p {
+      font-size: 1.2em;
+      margin-top: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      color: white;
+      border: 1px solid white;
+      border-radius: 5px;
+      margin-top: 20px;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+
+    .button:hover {
+      background-color: white;
+      color: black;
+    }
+    
+    #about {
+      margin: 0 auto;
+      text-align: center;
+      padding: 50px;
+      background-color: black;
+      color: white;
+      width: 100vw;
+    }
+    #about h2 , #product h2 {
+      padding: 20px;
+    }
+    .service {
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      gap: 10px;
+    }
+    .card {
+      width: 23%;
+      display: grid;
+      justify-content: center;
+    }
+    .img img {
+      height: 55px;
+    }
+    
+    #product {
+      margin: 0 auto;
+      text-align: center;
+      padding: 50px;
+      width: 100vw;
+      background-color: white;
+    }
+    .theproduct {
+      display: grid;
+      justify-content: center;
+    }
+    .p-card {
+      text-align: center;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    .p-card img {
+      width: 100%;
+    }
+    button {
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 6px 8px;
+      border-radius: 5px;
+      cursor: pointer;
+     }
+    #contact {
+      display: grid;
+      justify-content: center;
+      background: white;
+      padding-bottom: 30px;
+    }
+    .c-info img {
+      width: 25vw;
+    }
+    .c-info {
+      text-align: center;
+      width: 80vw;
+    }
+    .c-info p {
+      font-size: 1.1em;
+      margin-top: 20px;
+    }
+    .cr {
+      text-align: center;
+      background-color: #171717;
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.7em;
+    }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <img class="logo" src="https://ibox.co.id/images/logo/ibox_logo.svg">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#product">Product</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <div id="home">
+        <h1>Selamat Datang di iBox</h1>
+        <img src="https://storage.googleapis.com/eraspacelink/pmp/production/banners/images/XbAla9R5xeCbwq3BibFgX8CvF8TvdRD7z2jL7hMR.webp"/>
+        <p>Kami menyediakan berbagai produk teknologi terkini untuk kebutuhan Anda.</p>
+        <a href="#product" class="button">Lihat Produk</a>
+      </div>
+      <div id="about">
+        <h2>About Us</h2>
+        <p>iBox adalah Apple Premium Reseller terkemuka di Indonesia yang mengkhususkan diri dalam produk-produk Apple dan berbagai macam aksesoris pelengkap, software dan produk lainnya.</p>
+        <p>iBox menawarkan one-stop Apple digital lifestyle shopping. Pelanggan dapat menikmati pengalaman belanja yang interaktif di mana mereka dipersilahkan untuk menyentuh, merasakan dan menguji berbagai produk Apple terbaru.</p>
+        <p>iBox menyediakan training dan hands-on coaching untuk semua produk dan software Apple. Selain itu, Apple Premium Service Provider memberikan layanan after-sales yang sangat baik dengan memberikan panduan dan bantuan bagi pengguna Apple.</p>
+        <div class="service">
+          <div class="card">
+            <div class="img">
+              <img src="https://cdn.eraspace.com/pub/media/wysiwyg/reviews/garansi.png"/>
+            </div>
+            <div class="info">
+              <h3>Garansi Resmi</h3>
+            </div>
+          </div>
+          <div class="card">
+            <div class="img">
+              <img src="https://cdn.eraspace.com/pub/media/wysiwyg/reviews/layanan.png"/>
+            </div>
+            <div class="info">
+              <h3>Layanan Pelanggan</h3>
+            </div>
+          </div>
+          <div class="card">
+            <div class="img">
+              <img src="https://cdn.eraspace.com/pub/media/wysiwyg/reviews/jasa.png"/>
+            </div>
+            <div class="info">
+              <h3>Jasa Pengiriman</h3>
+            </div>
+          </div>
+          <div class="card">
+            <div class="img">
+              <img src="https://cdn.eraspace.com/pub/media/wysiwyg/reviews/keuntungan.png"/>
+            </div>
+            <div class="info">
+              <h3>Keuntungan Berbelanja</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="product">
+        <h2>Our Product</h2>
+        <div class="theproduct">
+          <div class="p-card">
+            <h3>iPad</h3>
+            <img id="ipad" src="https://cdn.shopify.com/s/files/1/0604/8373/1606/products/IMG-6207913_990x.jpg?v=1660438124"/>
+            <button onclick="document.getElementById('ipad').src='https://cdn.shopify.com/s/files/1/0604/8373/1606/products/IMG-6207913_990x.jpg?v=1660438124'">Depan</button>
+            <button onclick="document.getElementById('ipad').src='https://cdn.shopify.com/s/files/1/0604/8373/1606/products/IMG-6207907_990x.jpg?v=1660438137'">Belakang</button>
+          </div>
+          <div class="p-card">
+            <h3>iPhone</h3>
+            <img id="iphone" src="https://cdn.eraspace.com/media/catalog/product/a/p/apple_iphone_11_green_2.jpg"/>
+            <button onclick="document.getElementById('iphone').src='https://cdn.eraspace.com/media/catalog/product/a/p/apple_iphone_11_green_2.jpg'">Depan</button>
+            <button onclick="document.getElementById('iphone').src='https://cdn.eraspace.com/media/catalog/product/a/p/apple_iphone_11_green_3.jpg'">Belakang</button>
+          </div>
+          <div class="p-card">
+            <h3>Macbook</h3>
+            <img id="mac" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/refurb-mbp14-space-m1-2021_AV1?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1638575219000"/>
+            <button onclick="document.getElementById('mac').src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/refurb-mbp14-space-m1-2021_AV1?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1638575219000'">Depan</button>
+            <button onclick="document.getElementById('mac').src='https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/refurb-mbp14-space-m1-2021_AV3?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1638575221000'">Belakang</button>
+          </div>
+          <div class="p-card">
+            <h3>Watch</h3>
+            <img id="watch" src="https://cdn.eraspace.com/media/catalog/product/a/p/apple_watch_ultra_49mm_gps_cellular_titanium_case_with_orange_alpine_loop_1_4_1.jpg"/>
+            <button onclick="document.getElementById('watch').src='https://cdn.eraspace.com/media/catalog/product/a/p/apple_watch_ultra_49mm_gps_cellular_titanium_case_with_orange_alpine_loop_1_4_1.jpg'">Depan</button>
+            <button onclick="document.getElementById('watch').src='https://cdn.eraspace.com/media/catalog/product/a/p/apple_watch_ultra_49mm_gps_cellular_titanium_case_with_orange_alpine_loop_3_4_1.jpg'">Belakang</button>
+            <button onclick="document.getElementById('watch').src='https://cdn.eraspace.com/media/catalog/product/a/p/apple_watch_ultra_49mm_gps_cellular_titanium_case_with_orange_alpine_loop_2_4_1.jpg'">Atas</button>
+          </div>
+        </div>
+      </div>
+      <div id="contact">
+        <div class="c-info">
+          <img src="https://cdn.eraspace.com/pub/media/wysiwyg/ibox/Logo_IBOX.png">
+          <p>Jika Anda ingin bantuan atau memiliki masukan, silahkan hubungi kami:</p>
+          <p>Jam 9:30 - 17:30 (Senin s.d. Jumat)<br>Jam 9:30 - 15:00 (Sabtu)<br>Email : customercare@erajaya.com<br>Phone : 1500372<br>WA : 0812 9077 7722</p>
+        </div>
+      </div>
+      <div class="cr">
+        <p>COPYRIGHT &copy; 2019-2023 iBox. All Rights Reserved.</p>
+      </div>
+    </div>
+  </body>
+</html>
